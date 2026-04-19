@@ -48,7 +48,13 @@ from orders
 where order_date between '2026-04-9' and '2026-04-14' and product_name = 'Pizza'
 group by order_date,product_name;
 
+select c.customer_id , sum(o.quantity * o.price) 
+from customers c
+inner join orders o ON c.customer_id = o.customer_id
+where c.customer_id = 1
+group by c.customer_id;
 
-
-
+select customer_id , max(price)
+from orders
+group by customer_id;
 
