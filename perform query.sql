@@ -58,3 +58,21 @@ select customer_id , max(price)
 from orders
 group by customer_id;
 
+
+select product_name , price
+from orders
+where order_date between '2026-04-10' AND '2026-04-13' and price > 500;
+
+select order_id , product_name,price
+from orders
+where price = (select max(price) from orders
+				where price < (select max(price) from orders));
+
+select product_name , max(quantity)
+from orders
+group by product_name;
+
+select c.customer_name , o.product_name,o.price
+from customers c
+JOIN orders o ON c.customer_id = o.customer_id
+where o.order_date between '2026-04-10' and '2026-04-13' AND o.product_name = 'Pizza';
