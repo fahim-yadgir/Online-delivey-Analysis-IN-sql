@@ -95,3 +95,9 @@ select product_name , sum(quantity*price) as max_sale
 from orders
 group by product_name
 having max(quantity * price) = (select max(quantity * price)from orders);
+
+select product_name , sum(quantity * price) as max_sale
+from orders
+group by product_name
+having min(quantity * price) = (select min(quantity * price)from orders);
+
