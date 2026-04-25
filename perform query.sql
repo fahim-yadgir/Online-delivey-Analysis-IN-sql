@@ -76,3 +76,22 @@ select c.customer_name , o.product_name,o.price
 from customers c
 JOIN orders o ON c.customer_id = o.customer_id
 where o.order_date between '2026-04-10' and '2026-04-13' AND o.product_name = 'Pizza';
+
+select c.city , o.product_name , o.order_date
+from customers c
+join orders o on c.customer_id = o.customer_id
+where o.order_date between '2026-04-10' AND '2026-04-13' and o.product_name = 'Burger' and c.city = 'Mumbai';
+
+select c.customer_name ,sum(o.quantity * o.price)as total_Expends
+from customers c
+join orders o ON c.customer_id = o.customer_id
+where c.customer_name = 'John Dsouza';
+
+select product_name , max(quantity * price) as max_sale_product
+from orders
+group by product_name;
+
+select product_name , sum(quantity*price) as max_sale
+from orders
+group by product_name
+having max(quantity * price) = (select max(quantity * price)from orders);
