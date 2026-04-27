@@ -101,3 +101,11 @@ from orders
 group by product_name
 having min(quantity * price) = (select min(quantity * price)from orders);
 
+create view Total_pune_sale AS
+select c.city,o.product_name,sum(o.quantity * o.price) as totel_sale
+from customers c
+inner join orders o on c.customer_id = o.customer_id
+where c.city = 'Pune'
+group by c.city,o.product_name;
+
+select * from Total_pune_sale;
