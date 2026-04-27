@@ -109,3 +109,14 @@ where c.city = 'Pune'
 group by c.city,o.product_name;
 
 select * from Total_pune_sale;
+
+show indexes from orders;
+
+select * from orders;
+
+create view Mumbai_details AS
+select c.city , o.product_name , sum(o.quantity * o.price), o.order_date
+from customers c
+INNER join orders o ON c.customer_id = o.customer_id
+where c.city = 'Mumbai'
+group by o.product_name,c.city,o.order_date;
