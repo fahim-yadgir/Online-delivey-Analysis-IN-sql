@@ -120,3 +120,10 @@ from customers c
 INNER join orders o ON c.customer_id = o.customer_id
 where c.city = 'Mumbai'
 group by o.product_name,c.city,o.order_date;
+
+create view Delhi_details as
+select c.city , o.product_name , sum(o.quantity * o.price),o.order_date
+from customers c 
+inner join orders o ON c.customer_id = o.customer_id
+where o.order_date between '2026-04-10' and '2026-04-13'
+group by c.city , o.product_name, o.order_date;
