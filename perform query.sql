@@ -146,3 +146,6 @@ where customer_id = 3;
 
 select * from orders
 where order_date is null;
+
+show indexes from orders;
+create index price on orders(product_name);
