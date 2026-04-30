@@ -127,3 +127,22 @@ from customers c
 inner join orders o ON c.customer_id = o.customer_id
 where o.order_date between '2026-04-10' and '2026-04-13'
 group by c.city , o.product_name, o.order_date;
+
+select * 
+from customers c 
+left join orders o on c.customer_id = o.customer_id
+where c.customer_id is null or o.customer_id is null;
+
+select * from delhi_details;
+
+select * from orders o 
+right join customers c on c.customer_id = o.customer_id
+where o.order_date is null;
+
+SET SQL_SAFE_UPDATES = 0;
+update orders
+set order_date = null
+where customer_id = 3;
+
+select * from orders
+where order_date is null;
