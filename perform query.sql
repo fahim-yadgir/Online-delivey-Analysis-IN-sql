@@ -149,3 +149,40 @@ where order_date is null;
 
 show indexes from orders;
 create index price on orders(product_name);
+
+-- DELIMITER $$
+
+-- create procedure CustomersAdd(
+-- 		in customer_id int,
+--         in customer_name varchar(100),
+--         in city varchar (40),
+--         in phone varchar (40)
+-- )
+-- Begin
+-- 	insert into customers(customer_id,customer_name,city,phone)
+--     values(customer_id,customer_name,city,phone);
+--     select * from customers;
+-- end $$
+-- delimiter ;
+-- drop procedure CustomersAdd;
+call CustomersAdd(7,'kaif','Pune','8080735821')
+
+-- DELIMITER $$
+
+-- create procedure OrdersAdd(
+-- 		in order_id int,
+-- 		in customer_id int,
+--         in product_name varchar(100),
+--         in quantity int,
+--         in price int,
+--         in order_date date
+-- )
+-- Begin
+-- 	insert into orders(order_id,customer_id,product_name,quantity,price,order_date)
+--     values(order_id,customer_id,product_name,quantity,price,order_Date);
+--     select * from orders;
+-- end $$
+-- delimiter ;
+
+-- Call OrdersAdd(109,7,'Biryani',4,120,'2026-04-01');
+ 
