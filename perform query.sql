@@ -220,3 +220,28 @@ delimiter ;
 
 call IncreasePriceByProductName('Pizza',150);
 
+select * from orders;
+
+drop procedure PerfectPriceincrease;
+
+delimiter $$
+
+create procedure PerfectPriceincrease(
+in IncreasePrice int,
+in product_name varchar(50)
+)
+begin
+update orders
+set Total_price = price * quantity
+where product_name = product_name;
+select * from orders;
+end $$
+
+delimiter ;
+
+call PerfectPriceincrease(25,'Pizza');
+call PerfectPriceincrease(50,'Burger');
+call PerfectPriceincrease(50,'Pasta');
+call PerfectPriceincrease(25,'Sandwich');
+call PerfectPriceincrease(25,'Biryani');
+

@@ -18,3 +18,39 @@ INSERT INTO orders VALUES
 (106, 5, 'Biryani', 2, 400, '2026-04-13'),
 (107, 6, 'Noodles', 1, 180, '2026-04-14'),
 (108, 2, 'Pizza', 4, 1000, '2026-04-14');
+
+select * from orders;
+
+alter table orders
+add column price int;
+
+alter table orders
+rename column price to Total_price;
+
+update orders
+set price = 325
+where product_name = 'Pizza';
+
+update orders
+set Total_price = 200
+where product_name = 'Burger';
+
+update orders
+set price = 200
+where product_name = 'Burger';
+
+update orders
+set price = 250
+where product_name = 'Pasta';
+
+update orders
+set price = 175
+where product_name = 'Sandwich';
+
+update orders
+set price = 275
+where product_name = 'Biryani';
+
+update orders
+set price = 330
+where product_name = 'Noodles';
