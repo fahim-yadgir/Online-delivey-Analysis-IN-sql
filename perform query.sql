@@ -185,4 +185,38 @@ call CustomersAdd(7,'kaif','Pune','8080735821')
 -- delimiter ;
 
 -- Call OrdersAdd(109,7,'Biryani',4,120,'2026-04-01');
- 
+
+delimiter $$
+
+create procedure IncreasePrice(
+in p_id int,
+in price_increase int)
+begin
+update orders
+set price = price + price_increase
+where order_id = p_id;
+select * from orders;
+
+end $$
+delimiter ;
+drop procedure IncreasePrice;
+
+call IncreasePrice(105,200)
+
+
+delimiter $$
+
+create procedure IncreasePriceByProductName(
+in product_name varchar(50),
+in Increase_price decimal
+)
+begin
+update orders
+set price = price + Increase_price
+where product_name = product_name;
+select * from orders;
+end $$
+delimiter ;
+
+call IncreasePriceByProductName('Pizza',150);
+
