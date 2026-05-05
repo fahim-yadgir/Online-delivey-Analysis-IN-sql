@@ -229,7 +229,7 @@ delimiter $$
 create procedure PerfectPriceincrease(
 in IncreasePrice int,
 in product_name varchar(50)
-)
+) 
 begin
 update orders
 set Total_price = price * quantity

@@ -14,4 +14,4 @@ INSERT INTO customers VALUES
 (3, 'Rahul Patil', 'Pune', '9988776655'),
 (4, 'Neha Verma', 'Delhi', '9090909090'),
 (5, 'John Dsouza', 'Goa', '8899776655'),
-(6, 'Priya Singh', 'Bangalore', '9012345678');
+(6, 'Priya Singh', 'Bangalore', '9012345678'); 

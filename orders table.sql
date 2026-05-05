@@ -31,7 +31,7 @@ update orders
 set price = 325
 where product_name = 'Pizza';
 
-update orders
+update orders 
 set Total_price = 200
 where product_name = 'Burger';
 
