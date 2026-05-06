@@ -245,3 +245,9 @@ call PerfectPriceincrease(50,'Pasta');
 call PerfectPriceincrease(25,'Sandwich');
 call PerfectPriceincrease(25,'Biryani');
 
+select c.customer_name , o.product_name , Total_price
+from customers c
+Inner JOIN orders o ON c.customer_id = o.customer_id
+where c.customer_name = 'Kaif';
+
+

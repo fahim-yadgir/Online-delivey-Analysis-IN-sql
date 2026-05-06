@@ -54,3 +54,4 @@ where product_name = 'Biryani';
 update orders
 set price = 330
 where product_name = 'Noodles';
+

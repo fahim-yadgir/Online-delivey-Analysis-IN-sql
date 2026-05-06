@@ -15,3 +15,6 @@ INSERT INTO customers VALUES
 (4, 'Neha Verma', 'Delhi', '9090909090'),
 (5, 'John Dsouza', 'Goa', '8899776655'),
 (6, 'Priya Singh', 'Bangalore', '9012345678'); 
+
+select * from customers;
+select * from orders;
