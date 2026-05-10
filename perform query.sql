@@ -250,4 +250,23 @@ from customers c
 Inner JOIN orders o ON c.customer_id = o.customer_id
 where c.customer_name = 'Kaif';
 
+delimiter $$
+
+create procedure FindNull()
+begin
+select c.customer_id ,o.order_date
+from customers c
+join orders o on c.customer_id = o.customer_id 
+where c.customer_id is null or o.order_date is null;
+
+end $$
+
+delimiter ;
+
+drop procedure FindNull;
+
+call FindNull();
+
+
+
 
