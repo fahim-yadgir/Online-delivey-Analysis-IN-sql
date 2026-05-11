@@ -267,6 +267,11 @@ drop procedure FindNull;
 
 call FindNull();
 
+select c.city ,o.product_name , sum(o.quantity * o.price) as total_revenue_of_Goa
+from customers c
+join orders o ON c.customer_id = o.customer_id
+where c.city = 'Goa'
+group by o.product_name;
 
 
 
