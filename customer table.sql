@@ -16,5 +16,10 @@ INSERT INTO customers VALUES
 (5, 'John Dsouza', 'Goa', '8899776655'),
 (6, 'Priya Singh', 'Bangalore', '9012345678'); 
 
-select * from customers;
+select * from 
+customers;
 select * from orders;
+
+update customers
+set phone = '7385094941'
+where customer_id = 6;
