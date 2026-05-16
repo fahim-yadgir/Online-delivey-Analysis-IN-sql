@@ -273,5 +273,9 @@ join orders o ON c.customer_id = o.customer_id
 where c.city = 'Goa'
 group by o.product_name;
 
-
-
+select c.customer_name , o.product_name , o.total_price
+from customers c
+join orders o on c.customer_id = o.customer_id
+where o.total_price in(select max(total_price)
+						from orders
+                        group by product_name);
