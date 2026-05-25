@@ -128,6 +128,8 @@ inner join orders o ON c.customer_id = o.customer_id
 where o.order_date between '2026-04-10' and '2026-04-13'
 group by c.city , o.product_name, o.order_date;
 
+
+
 select * 
 from customers c 
 left join orders o on c.customer_id = o.customer_id
@@ -291,3 +293,10 @@ where o.total_price in (select max(total_price)
 from orders
 group by product_name);
                         
+                        
+select c.city , o.product_name , sum(o.quantity * o.price) ,o.order_date
+from customers c
+join orders o on c.customer_id = o.customer_id
+where o.order_date between '2026-04-11' and '2026-04-13'
+group by c.city,o.product_name,o.order_date;
+
