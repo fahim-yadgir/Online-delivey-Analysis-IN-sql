@@ -300,3 +300,18 @@ join orders o on c.customer_id = o.customer_id
 where o.order_date between '2026-04-11' and '2026-04-13'
 group by c.city,o.product_name,o.order_date;
 
+select c.city , o.product_name , sum(o.quantity * o.price) as total_sale
+from customers c
+inner join orders o on c.customer_id = o.customer_id
+where c.city = 'Pune'
+group by c.city,o.product_name;
+
+select product_name , max(Total_price)
+from orders 
+group by product_name 
+having max(total_price);
+
+select product_name , total_price
+from orders 
+where total_price = (select max(total_price)from orders
+					where total_price < (select max(total_price)from orders))
