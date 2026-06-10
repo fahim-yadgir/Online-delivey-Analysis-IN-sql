@@ -314,4 +314,13 @@ having max(total_price);
 select product_name , total_price
 from orders 
 where total_price = (select max(total_price)from orders
-					where total_price < (select max(total_price)from orders))
+					where total_price < (select max(total_price)from orders));
+				
+select c.city , sum(o.quantity * o.price) as total_revenue
+from customers c
+left join orders o on c.customer_id = o.customer_id
+where c.city = 'Pune';
+
+select * from orders;
+
+

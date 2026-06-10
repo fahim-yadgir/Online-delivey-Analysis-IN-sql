@@ -27,3 +27,5 @@ where customer_id = 6;
 update customers
 set phone = '9850429892'
 where customer_id = 4;
+
+
