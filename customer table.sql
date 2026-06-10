@@ -28,4 +28,5 @@ update customers
 set phone = '9850429892'
 where customer_id = 4;
 
-
+alter table customers
+rename column city to customer_city;

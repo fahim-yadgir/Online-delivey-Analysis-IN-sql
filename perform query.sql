@@ -321,6 +321,10 @@ from customers c
 left join orders o on c.customer_id = o.customer_id
 where c.city = 'Pune';
 
+select * from customers;
 select * from orders;
 
+select sum(total_price) as total_price
+from orders
+where order_date between '2026-04-10' and '2026-04-12';
 

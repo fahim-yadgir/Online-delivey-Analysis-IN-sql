@@ -55,3 +55,7 @@ update orders
 set price = 330
 where product_name = 'Noodles';
 
+update orders
+set order_date = '2026-04-12'
+where order_id = 104;
+
