@@ -328,6 +328,10 @@ select sum(total_price) as total_price
 from orders
 where order_date between '2026-04-10' and '2026-04-12';
 
-
+select c.customer_name  ,sum(o.total_price) as pizza_sale
+from customers c
+join orders o on c.customer_id = o.customer_id
+where o.product_name = 'Pizza'
+group by c.customer_name;
 
 
