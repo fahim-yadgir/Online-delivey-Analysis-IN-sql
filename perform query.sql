@@ -334,4 +334,7 @@ join orders o on c.customer_id = o.customer_id
 where o.product_name = 'Pizza'
 group by c.customer_name;
 
-
+select product_name , quantity , sum(price * quantity)as total_revene
+from orders
+where order_date between '2026-04-10' and '2026-04-12'
+group by product_name , quantity ;
