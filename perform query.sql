@@ -338,3 +338,8 @@ select product_name , quantity , sum(price * quantity)as total_revene
 from orders
 where order_date between '2026-04-10' and '2026-04-12'
 group by product_name , quantity ;
+
+select c.customer_id,c.customer_name,o.product_name,quantity,
+		sum(o.price * o.quantity) over (order by order_id)as total_revenue
+from customers c
+left join orders o on c.customer_id = o.customer_id;
