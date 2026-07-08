@@ -30,3 +30,7 @@ where customer_id = 4;
 
 alter table customers
 rename column city to customer_city;
+
+select * ,
+	sum(price) over(partition by product_name order by order_id)as total_sum
+from orders;
