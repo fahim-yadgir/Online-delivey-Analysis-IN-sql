@@ -344,3 +344,22 @@ select c.customer_id,c.customer_name,o.product_name,quantity,
 from customers c
 left join orders o on c.customer_id = o.customer_id
 where customer_city = 'Pune';
+
+delimiter $$
+create procedure Update_mob(
+in c_id int ,
+in phn bigint
+)
+begin
+
+update customers
+set phone = phn
+where customer_id = c_id;
+select * from customers;
+end $$
+delimiter ;
+
+
+drop procedure Update_mob;
+
+call Update_mob(3,8080901010);
