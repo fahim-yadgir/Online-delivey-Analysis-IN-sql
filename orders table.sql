@@ -59,3 +59,22 @@ update orders
 set order_date = '2026-04-12'
 where order_id = 104;
 
+delimiter $$
+
+create procedure Update_quantity(
+in o_id int,
+in o_quan int
+)
+begin
+update orders
+set quantity = o_quan,
+	Total_price = quantity * price
+where order_id = o_id;
+select * from orders;
+end $$
+delimiter ;
+
+drop procedure Update_quantity;
+
+call Update_quantity(101,1);
+

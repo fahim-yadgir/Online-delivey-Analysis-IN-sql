@@ -359,7 +359,6 @@ select * from customers;
 end $$
 delimiter ;
 
-
 drop procedure Update_mob;
 
 call Update_mob(3,8080901010);
