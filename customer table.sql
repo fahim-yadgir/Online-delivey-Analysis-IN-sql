@@ -39,3 +39,6 @@ select c.customer_name,o.product_name,o.price
 from customers c
 right join orders o on c.customer_id = o.customer_id
 where o.price >= 200;
+
+alter table customers
+modify column phone bigint;
