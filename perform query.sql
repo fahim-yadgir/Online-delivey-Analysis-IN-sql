@@ -362,3 +362,9 @@ delimiter ;
 drop procedure Update_mob;
 
 call Update_mob(3,8080901010);
+
+select c.customer_city , o.product_name as product_name , sum(o.Total_price) 
+from orders o 
+left join customers c on c.customer_id = o.customer_id
+group by c.customer_city , o.product_name
+order by product_name;
